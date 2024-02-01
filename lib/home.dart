@@ -79,6 +79,9 @@ class _HomeState extends State<Home> {
             else if(m.text.contains('hi')){
               tx='hallow, How are you ???';
             }
+            else if(m.text.contains('thank')){
+              tx='welcome, Keep me in touch dear';
+            }
             else{
               tx=m.text;
             }
