@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
   ChatUser(id: '1', firstName: 'Hussain', lastName: 'Mustafa');
 
   final ChatUser _gptChatUser =
-  ChatUser(id: '2', firstName: 'Chat', lastName: 'GPT');
+  ChatUser(id: '2', firstName: 'Human', lastName: 'Resource');
 
   List<ChatMessage> _messages = <ChatMessage>[];
   List<ChatUser> _typingUsers = <ChatUser>[];
