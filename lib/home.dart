@@ -65,6 +65,17 @@ class _HomeState extends State<Home> {
             textColor: Colors.white,
           ),
           onSend: (ChatMessage m) {
+            String tx='';
+            if(m.text.contains('need')){
+              var splt= m.text.split('need') ;
+              tx='Ok I will give you ${splt[1]} as soon as possible';
+            }
+            else if(m.text.contains('hi')){
+              tx='hallow, How are you ???';
+            }
+            else{
+              tx=m.text;
+            }
 
     setState(() {
         _messages.insert(0, m);
@@ -74,7 +85,7 @@ class _HomeState extends State<Home> {
                       ChatMessage(
                           user: _gptChatUser,
                           createdAt: DateTime.now(),
-                          text: m.text),
+                          text: tx),
                     );
 
 
