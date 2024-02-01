@@ -3,6 +3,12 @@
 
 
 // import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
+
+
+
+
+
+
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_chatgpt_tutorial_yt/consts.dart';
@@ -45,7 +51,7 @@ class _HomeState extends State<Home> {
           1,
         ),
         title: const Text(
-          'GPT Chat',
+          'HR Chat',
           style: TextStyle(
             color: Colors.white,
           ),
