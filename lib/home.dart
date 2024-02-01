@@ -68,6 +68,17 @@ class _HomeState extends State<Home> {
 
     setState(() {
         _messages.insert(0, m);
+
+        _messages.insert(
+                      0,
+                      ChatMessage(
+                          user: _gptChatUser,
+                          createdAt: DateTime.now(),
+                          text: m.text),
+                    );
+
+
+
        // _typingUsers.add(_gptChatUser);
       });
             //getChatResponse(m);
