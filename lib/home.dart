@@ -9,6 +9,7 @@
 
 
 
+import 'package:chat_gpt_hr/chat_handler.dart';
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_chatgpt_tutorial_yt/consts.dart';
@@ -71,20 +72,7 @@ class _HomeState extends State<Home> {
             textColor: Colors.white,
           ),
           onSend: (ChatMessage m) {
-            String tx='';
-            if(m.text.contains('need')){
-              var splt= m.text.split('need') ;
-              tx='Ok I will give you ${splt[1]} as soon as possible';
-            }
-            else if(m.text.contains('hi')){
-              tx='hallow, How are you ???';
-            }
-            else if(m.text.contains('thank')){
-              tx='welcome, Keep me in touch dear';
-            }
-            else{
-              tx=m.text;
-            }
+
 
     setState(() {
         _messages.insert(0, m);
@@ -94,7 +82,7 @@ class _HomeState extends State<Home> {
                       ChatMessage(
                           user: _gptChatUser,
                           createdAt: DateTime.now(),
-                          text: tx),
+                          text: ChatHandler().handleChat(m.text)),
                     );
 
 
