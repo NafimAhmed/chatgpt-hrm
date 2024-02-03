@@ -43,6 +43,15 @@ class ChatHandler {
 
     }
 
+    else if(message.contains('casual leave')){
+      tx='Please select the leave date range <Send a date selection link in chat>???';
+    }
+
+    else if(message.contains('sick leave')){
+      tx='ok I will arrange a sick leave for you only for today.';
+    }
+
+
 
 
 
