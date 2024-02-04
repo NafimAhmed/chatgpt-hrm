@@ -82,6 +82,7 @@ class _HomeState extends State<Home> {
                       ChatMessage(
                           user: _gptChatUser,
                           createdAt: DateTime.now(),
+                          //medias: Image.asset('https://calendar.google.com/calendar/u/0/r?pli=1'),
                           text: ChatHandler().handleChat(m.text)),
                     );
 
