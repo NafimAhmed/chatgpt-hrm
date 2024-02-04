@@ -12,7 +12,7 @@ class ChatGPTHandler {
 
 
   final List<Map<String, String>> messages = [];
-  static const String OpenAiKey = 'ChatGPT-Key';
+  static const String OpenAiKey = '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';
 
   Future<String> chatGPTHandler(String prompt) async {
 
