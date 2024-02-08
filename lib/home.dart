@@ -71,10 +71,13 @@ class _HomeState extends State<Home> {
             ),
             textColor: Colors.white,
           ),
-          onSend: (ChatMessage m) {
+          onSend: (ChatMessage m) async {
 
 
-    setState(() {
+            String reply=await ChatHandler().handleChat(m.text).toString();
+
+
+    setState(()  {
         _messages.insert(0, m);
 
         _messages.insert(
@@ -83,7 +86,7 @@ class _HomeState extends State<Home> {
                           user: _gptChatUser,
                           createdAt: DateTime.now(),
                           //medias: Image.asset('https://calendar.google.com/calendar/u/0/r?pli=1'),
-                          text: ChatHandler().handleChat(m.text)),
+                          text: reply),
                     );
 
 

@@ -2,11 +2,13 @@
 
 import "package:http/http.dart" as http;
 
+import "chat_gpt_handler.dart";
+
 
 class ChatHandler {
 
 
-  String handleChat(String message){
+  Future<String> handleChat(String message) async {
 
     message=message.toLowerCase();
 
@@ -68,7 +70,7 @@ class ChatHandler {
       tx='welcome, Keep me in touch dear';
     }
     else{
-      tx=message;
+      tx=await ChatGPTHandler().chatGPTHandler(message).toString();
     }
 
 
