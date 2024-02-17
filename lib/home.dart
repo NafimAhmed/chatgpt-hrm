@@ -12,6 +12,8 @@
 import 'package:chat_gpt_hr/chat_handler.dart';
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
+
+import 'chat_gpt_handler.dart';
 // import 'package:flutter_chatgpt_tutorial_yt/consts.dart';
 
 class Home extends StatefulWidget {
@@ -71,12 +73,9 @@ class _HomeState extends State<Home> {
             ),
             textColor: Colors.white,
           ),
-          onSend: (ChatMessage m) async {
-
-
-            String reply=await ChatHandler().handleChat(m.text).toString();
-
-
+          onSend: (ChatMessage m)  {
+            String? reply =  ChatHandler().handleChat(m.text).toString();
+            debugPrint("chat reply ......"+reply);
     setState(()  {
         _messages.insert(0, m);
 

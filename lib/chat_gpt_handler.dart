@@ -1,5 +1,6 @@
 import "dart:convert";
 
+import "package:flutter/widgets.dart";
 import "package:http/http.dart" as http;
 
 
@@ -12,7 +13,7 @@ class ChatGPTHandler {
 
 
   final List<Map<String, String>> messages = [];
-  static const String OpenAiKey = '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';
+  static const String OpenAiKey = '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';
 
   Future<String> chatGPTHandler(String prompt) async {
 
@@ -31,11 +32,16 @@ class ChatGPTHandler {
         },
         body: jsonEncode({
           "model": "gpt-3.5-turbo",
-          "messages": messages,
+          "messages":  [
+            {'role': 'user', 'content': "hello gpt"},
+          ],
         }),
       );
 
+      debugPrint("response from gpt....."+res.statusCode.toString());
+
       if (res.statusCode == 200) {
+        debugPrint("response from gpt....."+res.body.toString());
         String content =
         jsonDecode(res.body)['choices'][0]['message']['content'];
         content = content.trim();
